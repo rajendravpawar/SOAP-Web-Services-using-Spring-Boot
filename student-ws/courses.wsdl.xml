@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://rptech.com/course" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://rptech.com/course" targetNamespace="http://rptech.com/course">
+  <wsdl:types xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://rptech.com/course" xmlns:tns="http://rptech.com/course">
+
+	<xs:element name="GetCourseDetailsRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+	<xs:element name="GetCourseDetailsResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<xs:element name="CourseDetails" type="tns:CourseDetails" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+
+
+	<xs:element name="GetAllCourseDetailsRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+	</xs:element>
+
+	<xs:element name="GetAllCourseDetailsResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<xs:element maxOccurs="unbounded" name="CourseDetails" type="tns:CourseDetails" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+
+
+
+	<xs:element name="DeleteCourseRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteCourseResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+				<xs:element name="status" type="tns:Status" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Status" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:restriction base="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:enumeration value="SUCCESS" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:enumeration value="FAILED" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CourseDetails" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="id" type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:element name="description" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="Student" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="id" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:element name="Name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:element name="Stardard" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:element name="address" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+			<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteCourseResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:DeleteCourseResponse" name="DeleteCourseResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:GetAllCourseDetailsRequest" name="GetAllCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteCourseRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:DeleteCourseRequest" name="DeleteCourseRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:GetAllCourseDetailsResponse" name="GetAllCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:GetCourseDetailsResponse" name="GetCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:part element="tns:GetCourseDetailsRequest" name="GetCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CoursePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:operation name="DeleteCourse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:DeleteCourseRequest" name="DeleteCourseRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:DeleteCourseResponse" name="DeleteCourseResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseDetails" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:GetAllCourseDetailsRequest" name="GetAllCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:GetAllCourseDetailsResponse" name="GetAllCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseDetails" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:input message="tns:GetCourseDetailsRequest" name="GetCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:input>
+      <wsdl:output message="tns:GetCourseDetailsResponse" name="GetCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CoursePortTypeSoap11" type="tns:CoursePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <wsdl:operation name="DeleteCourse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="DeleteCourseRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteCourseResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseDetails" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="GetAllCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="GetAllCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseDetails" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:operation soapAction="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <wsdl:input name="GetCourseDetailsRequest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:input>
+      <wsdl:output name="GetCourseDetailsResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CoursePortTypeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:port binding="tns:CoursePortTypeSoap11" name="CoursePortTypeSoap11" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <soap:address location="http://localhost:8080/webservices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

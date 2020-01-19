@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GetCourseDetailsRequest xmlns="http://rptech.com/course" xsi:schemaLocation="http://rptech.com/course Course-details.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<id>1</id>
+</GetCourseDetailsRequest>

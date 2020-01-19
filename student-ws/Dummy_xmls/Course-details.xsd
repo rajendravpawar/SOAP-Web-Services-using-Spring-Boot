@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rptech.com/course"
+	xmlns:tns="http://rptech.com/course" elementFormDefault="qualified">
+
+	<xs:element name="GetCourseDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:integer"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+	<xs:element name="GetCourseDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CourseDetails" type="tns:CourseDetails"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+	</xs:element>
+
+
+	<xs:complexType name="CourseDetails">
+
+		<xs:sequence>
+			<xs:element name="id" type="xs:integer"></xs:element>
+			<xs:element name="name" type="xs:string"></xs:element>
+			<xs:element name="description" type="xs:string"></xs:element>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+
+
+	<xs:complexType name="Student">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"></xs:element>
+			<xs:element name="Name" type="xs:string"></xs:element>
+			<xs:element name="Stardard" type="xs:string"></xs:element>
+			<xs:element name="address" type="xs:string"></xs:element>
+			<xs:sequence></xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
