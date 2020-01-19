@@ -10,6 +10,9 @@ Two screen shots are added.
 
 1) URL to get WSDL file 
 2) How to provide authentication details for Web Services.
+USER NAME : USER1
+Password : PASSWORD
+
 
 
 
